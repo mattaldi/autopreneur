@@ -1,0 +1,30 @@
+# Virtual environment
+venv/
+.env
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.so
+
+# VSCode settings (optional)
+.vscode/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Output or temporary files
+*.log
+*.tmp
+
+# Data artifacts
+*.csv
+*.pdf
+*.html
+*.json
+*.md
+
+# Uncomment if you want to exclude report or data files (optional)
+# db/
+# templates/
