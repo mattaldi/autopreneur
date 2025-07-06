@@ -99,7 +99,19 @@ def write_pdf(product_folder: Path, assets: dict) -> Path:
         autoescape=select_autoescape(["html"])
     )
     template = env.get_template("umkm_productivity/caption_bank.html")
-    html_content = template.render(**assets)
+    
+    # Process captions for display - ensure hashtags are strings not arrays
+    display_assets = assets.copy()
+    if 'captions' in display_assets:
+        processed_captions = []
+        for caption in display_assets['captions']:
+            processed_caption = caption.copy()
+            if 'hashtags' in processed_caption and isinstance(processed_caption['hashtags'], list):
+                processed_caption['hashtags'] = ' '.join(processed_caption['hashtags'])
+            processed_captions.append(processed_caption)
+        display_assets['captions'] = processed_captions
+    
+    html_content = template.render(**display_assets)
     
     pdf_path = product_folder / "panduan_konten.pdf"
     HTML(string=html_content).write_pdf(pdf_path)
@@ -247,7 +259,23 @@ def menu_generate_product():
         with open(csv_path, 'w', newline='', encoding='utf-8') as f:
             writer = csv.DictWriter(f, fieldnames=['day', 'text'])
             writer.writeheader()
-            writer.writerows(assets['captions'])
+            
+            # Process captions to merge hashtags into text
+            processed_captions = []
+            for caption in assets['captions']:
+                processed_caption = {
+                    'day': caption['day'],
+                    'text': caption['text']
+                }
+                
+                # Add hashtags to text if they exist
+                if 'hashtags' in caption and caption['hashtags']:
+                    hashtags_str = ' '.join(caption['hashtags'])
+                    processed_caption['text'] = f"{caption['text']} {hashtags_str}"
+                
+                processed_captions.append(processed_caption)
+            
+            writer.writerows(processed_captions)
         
         # 2. Simpan file PDF
         pdf_path = write_pdf(product_folder, assets)
