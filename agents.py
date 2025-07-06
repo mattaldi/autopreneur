@@ -23,7 +23,7 @@ class AnalystAgent:
         
         print(f"🕵️  AnalystAgent: Researching '{topic}'...")
         resp = client.chat.completions.create(
-            model="gpt-4-turbo",
+            model="gpt-4o-mini",
             messages=[
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": f"Research Indonesian market potential for: {topic}"}
@@ -38,7 +38,7 @@ class AnalystAgent:
         """Memberi skor pada ide berdasarkan laporan riset."""
         print("⚖️  AnalystAgent: Scoring business idea...")
         resp = client.chat.completions.create(
-            model="gpt-4-turbo",
+            model="gpt-4o-mini",
             messages=[
                 {"role": "system", "content": "You are a Venture Capitalist evaluating Indonesian digital product ideas. Based on the research report, score the business potential from 0 to 100. Consider: market demand (40%), competition level (20%), monetization potential (20%), and ease of automation (20%). Return ONLY the number."},
                 {"role": "user", "content": report_content},
@@ -155,7 +155,7 @@ class BuilderAgent:
         """
         
         resp = client.chat.completions.create(
-            model="gpt-4-turbo",
+            model="gpt-4o-mini",
             messages=[
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": f"Create content calendar for: {topic}"}
@@ -186,7 +186,7 @@ class BuilderAgent:
         """
         
         resp = client.chat.completions.create(
-            model="gpt-4-turbo",
+            model="gpt-4o-mini",
             messages=[
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": f"Create caption bank for: {topic}"}
@@ -227,7 +227,7 @@ class BuilderAgent:
         """
         
         resp = client.chat.completions.create(
-            model="gpt-4-turbo",
+            model="gpt-4o-mini",
             messages=[
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": f"Create invoice templates for business type: {topic}"}
@@ -266,7 +266,7 @@ class BuilderAgent:
         """
         
         resp = client.chat.completions.create(
-            model="gpt-4-turbo",
+            model="gpt-4o-mini",
             messages=[
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": f"Create keyword report for Shopee seller in: {topic}"}
@@ -299,7 +299,7 @@ class BuilderAgent:
         """
         
         resp = client.chat.completions.create(
-            model="gpt-4-turbo",
+            model="gpt-4o-mini",
             messages=[
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": f"Create hashtag clusters for: {topic}"}
@@ -336,7 +336,7 @@ class BuilderAgent:
         """
         
         resp = client.chat.completions.create(
-            model="gpt-4-turbo",
+            model="gpt-4o-mini",
             messages=[
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": f"Create copy swipes for: {topic}"}
@@ -375,7 +375,7 @@ class BuilderAgent:
         """
         
         resp = client.chat.completions.create(
-            model="gpt-4-turbo",
+            model="gpt-4o-mini",
             messages=[
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": f"Create batik pattern collection for: {topic}"}
@@ -427,7 +427,7 @@ class BuilderAgent:
         """
         
         resp = client.chat.completions.create(
-            model="gpt-4-turbo",
+            model="gpt-4o-mini",
             messages=[
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": f"Create brand kit for: {topic}"}
@@ -463,7 +463,7 @@ class BuilderAgent:
         """
         
         resp = client.chat.completions.create(
-            model="gpt-4-turbo",
+            model="gpt-4o-mini",
             messages=[
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": f"Create CapCut templates for: {topic}"}
@@ -508,7 +508,7 @@ class BuilderAgent:
         """
         
         resp = client.chat.completions.create(
-            model="gpt-4-turbo",
+            model="gpt-4o-mini",
             messages=[
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": f"Create tax calculator for UMKM in: {topic}"}
@@ -561,7 +561,7 @@ class BuilderAgent:
         """
         
         resp = client.chat.completions.create(
-            model="gpt-4-turbo",
+            model="gpt-4o-mini",
             messages=[
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": f"Create cash flow tracker for: {topic}"}
@@ -609,7 +609,7 @@ class BuilderAgent:
         """
         
         resp = client.chat.completions.create(
-            model="gpt-4-turbo",
+            model="gpt-4o-mini",
             messages=[
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": f"Create SOP templates for: {topic}"}
@@ -659,7 +659,7 @@ class BuilderAgent:
         """
         
         resp = client.chat.completions.create(
-            model="gpt-4-turbo",
+            model="gpt-4o-mini",
             messages=[
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": f"Create Ramadan calendar for: {topic}"}
@@ -722,7 +722,7 @@ class BuilderAgent:
         """
         
         resp = client.chat.completions.create(
-            model="gpt-4-turbo",
+            model="gpt-4o-mini",
             messages=[
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": f"Create wedding planner for: {topic}"}
@@ -775,7 +775,7 @@ class BuilderAgent:
         """
         
         resp = client.chat.completions.create(
-            model="gpt-4-turbo",
+            model="gpt-4o-mini",
             messages=[
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": f"Create year-end planner for: {topic}"}
