@@ -120,7 +120,7 @@ Produk tersimpan di folder:
 cd C:\
 mkdir code
 cd code
-git clone https://github.com/yourusername/autopreneur.git
+git clone https://github.com/mattaldi/autopreneur.git
 cd autopreneur
 ```
 
